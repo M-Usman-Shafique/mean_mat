@@ -1,5 +1,5 @@
 {
-    "name": "express",
+    "name": "mean-mat-server",
     "version": "1.0.0",
     "main": "dist/src/index.js",
     "scripts": {
@@ -8,7 +8,7 @@
         "dev:websocket": "USE_WEBSOCKET=true nodemon",
         "debug": "tsx --inspect src/index.ts",
         "build": "tsc",
-        "test": "cross-env NODE_ENV=test jest",
+        "test": "node --test --import tsx \"test/**/*.test.ts\"",
         "ts-check": "tsc --noEmit",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
@@ -54,12 +54,10 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.3",
         "globals": "^16.3.0",
-        "jest": "^30.2.0",
         "nodemon": "^3.1.10",
         "prettier": "^3.6.2",
         "prettier-plugin-ejs": "^1.0.3",
         "supertest": "^7.1.4",
-        "ts-jest": "^29.4.5",
         "tsx": "^4.20.6",
         "typescript": "^5.9.3"
     }

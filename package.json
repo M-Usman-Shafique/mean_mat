@@ -1,0 +1,27 @@
+{
+  "name": "mean-mat",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "lint:server": "npm --workspace server run lint",
+    "lint:client": "npm --workspace client run lint"
+  },
+  "lint-staged": {
+    "server/**/*.{ts,js}": [
+      "eslint --config server/eslint.config.js --fix",
+      "prettier --write"
+    ],
+    "client/src/**/*.{ts,html,scss,css}": [
+      "eslint --config client/eslint.config.mjs --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  }
+}

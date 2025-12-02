@@ -43,11 +43,7 @@ export const signupUser = async (req: Request, res: Response, next: NextFunction
 
         if (!newUser) throw new ApiError(500, "Failed to create user.");
 
-        await respondWithAuth(
-            res,
-            newUser._id,
-            "User registered and logged in successfully."
-        );
+        await respondWithAuth(res, newUser._id, "User registered and logged in successfully.");
     } catch (error) {
         if (filePath) await unlinkHandler(filePath);
         return next(error);

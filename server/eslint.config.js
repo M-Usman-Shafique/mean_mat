@@ -18,7 +18,8 @@ export default defineConfig([
             sourceType: "module",
             parser: tsparser,
             parserOptions: {
-                project: "./tsconfig.json",
+                project: "./tsconfig.eslint.json",
+                tsconfigRootDir: import.meta.dirname,
             },
             globals: globals.node,
         },
@@ -43,7 +44,8 @@ export default defineConfig([
             sourceType: "module",
             parser: tsparser,
             parserOptions: {
-                project: "./tsconfig.json",
+                project: "./tsconfig.eslint.json",
+                tsconfigRootDir: import.meta.dirname,
             },
             globals: {
                 ...globals.node,

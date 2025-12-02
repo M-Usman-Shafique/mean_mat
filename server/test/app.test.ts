@@ -1,10 +1,14 @@
+import test from "node:test";
+import assert from "node:assert/strict";
 import request from "supertest";
 import { app } from "../src/services/websocket";
 
-describe("GET /", () => {
-    it("should return the running message", async () => {
-        const response = await request(app).get("/");
-        expect(response.status).toBe(200);
-        expect(response.text).toContain("Express server is running");
-    });
+test("GET / should return running message", async () => {
+    const response = await request(app).get("/");
+
+    assert.equal(response.status, 200);
+    assert.ok(
+        response.text.includes("Express server is running"),
+        "Response should contain the running message"
+    );
 });
